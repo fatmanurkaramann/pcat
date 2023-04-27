@@ -205,15 +205,17 @@ h2, p { color: #666666; }
     padding-bottom: 35px;
 }
 
+
 .tm-page-title { font-size: 2.5rem; }
-.tm-catalog-item-list { justify-content: space-between; }
 
 .tm-catalog-item {
     max-width: 462px;
     display: flex;
     flex-direction: column;
     margin-bottom: 64px;
+
 }
+
 
 .tm-thumbnail-container { overflow: hidden; }
 .tm-thumbnail-container img { transition: all 0.3s ease; }
@@ -231,7 +233,25 @@ h2, p { color: #666666; }
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
+@media screen and (max-width: 1550px) {
+    .photo-detail-text{
+       margin-left: 0 !important;
+       margin: 0;
+       align-items: flex-start;
+       justify-content: flex-start;
+    }
+    .photo-detail-button{
+        margin-left: 0 !important;
+        margin: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+ }
+ .photo-detail-text{
+    max-width: 65rem;
+    margin-left: 40px;
+ }
+ 
 .tm-overlay-icon {
     color: #a7a7a7;
     opacity: 1;

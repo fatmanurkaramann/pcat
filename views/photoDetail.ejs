@@ -1,0 +1,86 @@
+<%- include('partials/_header.ejs') -%>
+
+    <body>
+        <div class="position-relative">
+            <%- include('partials/_navigation.ejs') -%>
+
+                <div class="tm-welcome-container text-center text-white">
+                    <div class="tm-welcome-container-inner">
+                        <p class="tm-welcome-text mb-1 text-white">Video Catalog is brought to you by TemplateMo.
+                        </p>
+                        <p class="tm-welcome-text mb-5 text-white">This is a full-width video banner.</p>
+                        <a href="#content" class="btn tm-btn-animate tm-btn-cta tm-icon-down">
+                            <span>Discover</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="tm-video-container">
+                    <video autoplay muted loop id="tm-video">
+                        <!-- <source src="video/sunset-timelapse-video.mp4" type="video/mp4"> -->
+                        <source src="video/wheat-field.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <i id="tm-video-control-button" class="fas fa-pause"></i>
+        </div>
+
+
+        <div class="container-fluid" style=" font-family: arial;
+            font-size: 24px;
+            justify-content: center; display: flex;
+      justify-content: center;
+      align-items: center;flex-direction: column;">
+            <div class="photo-detail-img" style="margin-top: 40px;">
+
+                <img class="img-responsive"
+                    src="https://www.camhotel.com.tr/uploads/felsefesi-sasirtici-bilgileri-ve-her-yonu-ile-doga-nedir_9.jpg"
+                    alt="Chania" width="1400" height="500">
+            </div>
+
+
+
+        </div>
+
+        <div class="mx-auto tm-content-container" id="photoDetailContent">
+            <div class="row tm-catalog-item-list">
+
+                <div class="photo-detail-text">
+
+                    <div class="p-4 tm-catalog-item-description">
+                        <h3 class="tm-text-primary mb-3 tm-catalog-item-title">
+                            <%= photo.title %>
+                        </h3>
+                        <p class="tm-catalog-item-text">
+                            <%= photo.description %>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="photo-detail-button ml-4" style=" position: absolute;right: 0;margin-right: 140px; ">
+
+                    <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                        <div class="form-group mb-0">
+                            <button type="submit"
+                                class="btn btn-primary rounded-0 d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Photo Detail</span></button>
+                        </div>
+                        <div class="form-group mb-0">
+                            <button type="submit"
+                                class="btn btn-danger rounded-0 mt-4 d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Delete
+                                    Photo</span></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <%- include('partials/_footer.ejs') -%>
+
+
+        </div>
+
+
+
+
+    </body>

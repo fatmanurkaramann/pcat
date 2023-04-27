@@ -20,8 +20,8 @@ app.use(express.json())
 
 app.get('/', async (req, res) => {
     const photos = await Photo.find()
-    res.render('index',{
-        photos:photos
+    res.render('index', {
+        photos: photos
     })
 })
 
@@ -30,6 +30,11 @@ app.get('/about', (req, res) => {
 })
 app.get('/add-photo', (req, res) => {
     res.render('add')
+})
+app.get('/photos/:id',async (req, res) => {
+    //console.log(req.params.id)
+    const photo = await Photo.findById(req.params.id)
+    res.render('photoDetail', { photo })
 })
 app.post('/photos', async (req, res) => {
     await Photo.create(req.body)
