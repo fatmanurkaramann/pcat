@@ -34,7 +34,7 @@
             <div class="photo-detail-img" style="margin-top: 40px;">
 
                 <img class="img-responsive"
-                    src="https://www.camhotel.com.tr/uploads/felsefesi-sasirtici-bilgileri-ve-her-yonu-ile-doga-nedir_9.jpg"
+                    src="<%= photo.image %>"
                     alt="Chania" width="1400" height="500">
             </div>
 
@@ -60,15 +60,15 @@
                 <div class="photo-detail-button ml-4" style=" position: absolute;right: 0;margin-right: 140px; ">
 
                     <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                        <div class="form-group mb-0">
-                            <button type="submit"
-                                class="btn btn-primary rounded-0 d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Photo Detail</span></button>
+                        <div class="btn-group-vertical" >
+                                <button type="submit" style="border-radius: 10px;"
+                                    class="btn btn-primary  d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Update Details</span></button>
+                           
+                                <button type="submit" style="border-radius: 10px;"
+                                    class="btn btn-danger mt-4 d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Delete
+                                        Photo</span></button>
                         </div>
-                        <div class="form-group mb-0">
-                            <button type="submit"
-                                class="btn btn-danger rounded-0 mt-4 d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Delete
-                                    Photo</span></button>
-                        </div>
+                      
                     </div>
                 </div>
 

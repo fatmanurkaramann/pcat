@@ -241,10 +241,19 @@ h2, p { color: #666666; }
        justify-content: flex-start;
     }
     .photo-detail-button{
-        margin-left: 0 !important;
+        margin-right: 0 !important;
         margin: 0;
         align-items: flex-start;
         justify-content: flex-start;
+    }
+ }
+ @media screen and (max-width: 430px) {
+    .photo-detail-text{
+        order:1
+     }
+    .photo-detail-button{
+        position: relative !important;
+   order:2
     }
  }
  .photo-detail-text{

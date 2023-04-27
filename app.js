@@ -1,7 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const fileUpload = require('express-fileupload');
 const ejs = require('ejs')
 const path = require('path')
+const fs = require('fs')
 const Photo = require('./models/Photo')
 
 const app = express();
@@ -17,9 +19,10 @@ app.set("view engine", "ejs");
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(fileUpload());
 
 app.get('/', async (req, res) => {
-    const photos = await Photo.find()
+    const photos = await Photo.find().sort('-dateCreated')
     res.render('index', {
         photos: photos
     })
@@ -31,13 +34,29 @@ app.get('/about', (req, res) => {
 app.get('/add-photo', (req, res) => {
     res.render('add')
 })
-app.get('/photos/:id',async (req, res) => {
+app.get('/photos/:id', async (req, res) => {
     //console.log(req.params.id)
     const photo = await Photo.findById(req.params.id)
     res.render('photoDetail', { photo })
 })
 app.post('/photos', async (req, res) => {
-    await Photo.create(req.body)
+
+    const uploadDir='public/uploads'
+    if(!fs.existsSync(uploadDir)){
+        fs.mkdirSync(uploadDir)
+    }
+    let uploadedImage=req.files.image
+    let uploadPath=__dirname+'/public/uploads/'+ uploadedImage.name
+
+    uploadedImage.mv(uploadPath,
+        async ()=>{
+            await Photo.create({...req.body,
+            image:'/uploads/'+ uploadedImage.name
+            })
+        }
+        )
+
+  
     res.redirect('/')
 })
 
