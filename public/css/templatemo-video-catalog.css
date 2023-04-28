@@ -218,6 +218,12 @@ p {
 .tm-icon-submit:hover:before {
   top: 18px;
 }
+.tm-icon-delete:before {
+  content: "\f2ed";
+}
+.tm-icon-delete:hover:before {
+  top: 18px;
+}
 .tm-btn-cta:hover {
   color: white;
 }
@@ -228,6 +234,10 @@ p {
 .tm-btn-submit:focus {
   color: white;
   background-color: #3399cc;
+}
+.tm-btn-delete:focus {
+  color: white;
+  background-color: #DC3545;
 }
 
 .tm-btn-download span {
