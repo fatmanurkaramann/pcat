@@ -33,9 +33,7 @@
       align-items: center;flex-direction: column;">
             <div class="photo-detail-img" style="margin-top: 40px;">
 
-                <img class="img-responsive"
-                    src="<%= photo.image %>"
-                    alt="Chania" width="1400" height="500">
+                <img class="img-responsive" src="<%= photo.image %>" alt="Chania" width="1400" height="500">
             </div>
 
 
@@ -60,15 +58,18 @@
                 <div class="photo-detail-button ml-4" style=" position: absolute;right: 0;margin-right: 140px; ">
 
                     <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                        <div class="btn-group-vertical" >
-                                <button type="submit" style="border-radius: 10px;" onclick="window.location.href = '/photos/edit/<%= photo._id %>'"
-                                    class="btn btn-primary  d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Update Details</span></button>
-                           
-                                <button type="submit" style="border-radius: 10px;"
-                                    class="btn btn-danger mt-4 d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Delete
-                                        Photo</span></button>
+                        <div class="btn-group-vertical">
+                            <button type="submit" style="border-radius: 10px;"
+                                onclick="window.location.href = '/photos/edit/<%= photo._id %>'"
+                                class="btn btn-primary  d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Update
+                                    Details</span></button>
+
+                            <button type="submit" style="border-radius: 10px;"
+                                onclick="if (confirm('ARE YOU SURE?')) {window.location.href = '/photos/<%= photo._id %>?_method=DELETE'}"
+                                class="btn btn-danger mt-4 d-block tm-btn-animate tm-btn-submit tm-icon-submit"><span>Delete
+                                    Photo</span></button>
                         </div>
-                      
+
                     </div>
                 </div>
 
