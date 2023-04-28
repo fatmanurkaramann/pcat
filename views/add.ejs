@@ -36,7 +36,8 @@ https://templatemo.com/tm-552-video-catalog
                         <div class="mx-auto pb-3 tm-about-text-container px-3">
                             <div class="row">
                                 <div class="col-lg-12 mb-5">
-                                    <form method="post"  encType="multipart/form-data" action="/photos" class="tm-contact-form">
+                                    <form method="post" encType="multipart/form-data" action="/photos"
+                                        class="tm-contact-form">
                                         <div class="form-group">
                                             <input type="text" name="title" class="form-control rounded-0"
                                                 placeholder="Photo title" required />
@@ -47,9 +48,11 @@ https://templatemo.com/tm-552-video-catalog
                                         </div>
                                         <div class="form-group">
                                             <label for="myfile">Select files:</label>
-                                            <input type="file" name="image" >
+                                            <input type="file" name="image" id="myfile">
                                         </div>
-
+                                        <div class="form-group">
+                                            <img src="" height="200" alt="Image preview" id="imagePreview">
+                                        </div>
                                         <div class="form-group mb-0">
                                             <button type="submit"
                                                 class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Submit</span></button>
@@ -70,10 +73,8 @@ https://templatemo.com/tm-552-video-catalog
                 <%- include('partials/_footer.ejs') -%>
             </div>
         </div>
-
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/parallax.min.js"></script>
     </body>
 
     </html>
